@@ -54,10 +54,26 @@ public class LogicalPrograms {
         return number;
     }
 
+    int reverseNumber() {
+        System.out.println("Enter the number ");
+        int number = sc.nextInt();
+        int rem;
+        int reverse = 0;
+        System.out.println("The entered number is " + number);
+        while (number != 0) {
+            rem = number % 10;
+            reverse = (reverse * 10) + rem;
+            number = number / 10;
+        }
+        System.out.println("The reverse number of the entered number " + reverse);
+        return reverse;
+    }
+
     public static void main(String[] args) {
         LogicalPrograms logicalPrograms = new LogicalPrograms();
         logicalPrograms.fibonacciSeries();
         logicalPrograms.perfectNumber();
         logicalPrograms.primeNumber();
+        logicalPrograms.reverseNumber();
     }
 }
