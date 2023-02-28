@@ -45,6 +45,17 @@ public class Util {
         }
     }
 
+    public static double monthlyPayment(double P, double Y, double R) {
+
+        double n = 12 * Y;
+        double r = R / (12 * 100);
+
+        double payment = (P * r) / (1 - Math.pow((1 + r), (-n)));
+
+        System.out.println("Monthly Installment is " + payment);
+        return payment;
+    }
+
     public static void main(String[] args) {
         int m = Integer.parseInt(args[0]);
         int d = Integer.parseInt(args[1]);
@@ -64,6 +75,12 @@ public class Util {
         celsiusTemp = sc.nextDouble();
         double fahrenheitTemp2 = org.example.Util.temperatureConversion(celsiusTemp, "C");
         System.out.println(celsiusTemp + "°C = " + fahrenheitTemp2 + "°F");
+
+        double P = Double.parseDouble(args[0]);
+        double Y = Double.parseDouble(args[1]);
+        double R = Double.parseDouble(args[2]);
+
+        monthlyPayment(P, Y, R);
     }
 
 }
