@@ -69,11 +69,34 @@ public class LogicalPrograms {
         return reverse;
     }
 
+    static void couponNumber() {
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        int num1 = 0;
+        int distinctNum = 0;
+        int count = 0;
+        System.out.println("Enter how many coupons you want to find");
+        num = sc.nextInt();
+        boolean[] coupon = new boolean[num];
+        while (distinctNum < num) {
+            num1 = (int) ((Math.random() * 100) % num);
+            count++;
+            if (coupon[num1] == false) {
+                distinctNum++;
+                coupon[num1] = true;
+                System.out.print(num1 );
+            }
+        }
+        System.out.println();
+        System.out.println("Count of while loop executed " + count);
+    }
+
     public static void main(String[] args) {
         LogicalPrograms logicalPrograms = new LogicalPrograms();
         logicalPrograms.fibonacciSeries();
         logicalPrograms.perfectNumber();
         logicalPrograms.primeNumber();
         logicalPrograms.reverseNumber();
+        couponNumber();
     }
 }
