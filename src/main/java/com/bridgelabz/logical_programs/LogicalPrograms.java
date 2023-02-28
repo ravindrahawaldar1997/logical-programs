@@ -84,11 +84,22 @@ public class LogicalPrograms {
             if (coupon[num1] == false) {
                 distinctNum++;
                 coupon[num1] = true;
-                System.out.print(num1 );
+                System.out.print(num1);
             }
         }
         System.out.println();
         System.out.println("Count of while loop executed " + count);
+    }
+
+    void stopwatch() {
+        System.out.println("Press 1 to start the stopwatch");
+        double startTime = sc.nextDouble();
+        startTime = System.currentTimeMillis();
+        System.out.println("Press 0 to end the stopwatch");
+        double endTime = sc.nextDouble();
+        endTime = System.currentTimeMillis();
+        double elapsedTime = (endTime - startTime) / 1000;
+        System.out.println("The elapsed time is " + elapsedTime +" seconds");
     }
 
     public static void main(String[] args) {
@@ -98,5 +109,6 @@ public class LogicalPrograms {
         logicalPrograms.primeNumber();
         logicalPrograms.reverseNumber();
         couponNumber();
+        logicalPrograms.stopwatch();
     }
 }
