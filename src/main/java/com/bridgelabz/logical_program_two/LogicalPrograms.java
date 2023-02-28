@@ -58,10 +58,32 @@ public class LogicalPrograms {
         System.out.println(t);
         return t;
     }
+    static void toBinary(){
+        int num;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter number to convert in binary ");
+        num = scan.nextInt();
+        String binary = "";
+        int i = 0;
+        int num1;
+        while (num > 0) {
+            num1 = num % 2;
+            binary = num1 + binary;
+            num = num / 2;
+            i++;
+        }
+        System.out.println(binary);
+        while (binary.length() < 8) {
+
+            binary = "0" + binary;
+        }
+        System.out.println("Padding of Binary is " + binary);
+    }
     public static void main(String[] args) {
         LogicalPrograms logicalPrograms =new LogicalPrograms();
         logicalPrograms.vendingMachine();
         squareRoot();
+        toBinary();
 
     }
 }
