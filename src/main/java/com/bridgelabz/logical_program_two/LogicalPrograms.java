@@ -41,8 +41,27 @@ public class LogicalPrograms {
             amount %= rupees;
         }
     }
+
+    public static int getIntValue() {
+        Scanner scan = new Scanner(System.in);
+        return scan.nextInt();
+    }
+    static double squareRoot() {
+        System.out.println("Enter positive Integer value ");
+        double c = LogicalPrograms.getIntValue();
+        double t = c;
+        t = ((c / t) + t) / 2;
+        double epsilon = 1e-15;
+        while (Math.abs(t - c / t) > epsilon * t) {
+            t = ((c / t) + t) / 2;
+        }
+        System.out.println(t);
+        return t;
+    }
     public static void main(String[] args) {
         LogicalPrograms logicalPrograms =new LogicalPrograms();
         logicalPrograms.vendingMachine();
+        squareRoot();
+
     }
 }
