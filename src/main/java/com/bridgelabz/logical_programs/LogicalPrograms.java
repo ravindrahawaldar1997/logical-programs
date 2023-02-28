@@ -15,10 +15,29 @@ public class LogicalPrograms {
             a = b;
             b = c;
         }
+        System.out.println();
+    }
+    int perfectNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number to find is perfect number or not");
+        int number = sc.nextInt();
+        int perfect = 0;
+        for(int i =1; i<number; i++){
+            if(number % i == 0){
+                perfect += i;
+            }
+        }
+        if(perfect == number){
+            System.out.println(+number +" "  +"is a perfect number ");
+        }else {
+            System.out.println(+number +" " +"is not a perfect number");
+        }
+        return number;
     }
 
     public static void main(String[] args) {
         LogicalPrograms logicalPrograms = new LogicalPrograms();
         logicalPrograms.fibonacciSeries();
+        logicalPrograms.perfectNumber();
     }
 }
